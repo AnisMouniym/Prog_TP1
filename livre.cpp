@@ -14,9 +14,7 @@ std::string Livre::genre() const {
 	return _genre;
 }
 
-std::string Livre::auteur() const{
-	return _auteur;
-}
+std::string Auteur::auteur() const;
 
 std::string Date::toString(a_day) const;
 
