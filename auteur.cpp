@@ -4,7 +4,7 @@
 
 
 namespace personne {
-	Auteur::Auteur(std::string firstname, std::string lastname) : _firstname(firstname), 		    _lastname(lastname) {
+	Auteur::Auteur(std::string firstname, std::string lastname) : _firstname(firstname), _lastname(lastname) {
   }
 
   std:: string Auteur::firstname() const {

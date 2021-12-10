@@ -1,12 +1,13 @@
-
+#include "auteur.h"
 #include <iostream>
 #include "livre.h"
 #include "date.h"
 #include <assert.h>
 #include <vector>
+#include <string>
 
 namespace livre {
-	Livre::Livre(std::string title, std::string language, std::string genre, std::string auteur, int ISBN, date::Date date) {
+	Livre::Livre(std::string title, std::string language,std::string auteur, int ISBN, date::Date date) {
 	_title = title;
 	_language = language;
 	_genre = genre;
@@ -27,11 +28,13 @@ std::string Livre::genre() const {
 	return _genre;
 }
 
-std::string Auteur::auteur() const;
+std::string Auteur::auteur() {
+	getFullName(Auteur);
+}
 
-date::Date date() const;
+date::Date date() ;
 
-int Livre::ISBN() const{
+int Livre::ISBN() {
 	return _ISBN;
 }
 
