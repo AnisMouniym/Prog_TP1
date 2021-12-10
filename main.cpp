@@ -1,6 +1,7 @@
 
 #include "date.h"
 #include "Lecteur.h"
+#include "Emprunt.h"
 #include <iostream>
 
 int main() {
@@ -13,7 +14,11 @@ int main() {
 	std::cout << "a day: " << toString(a_day) << std::endl;
 	
 	reader::Lecteur l("le noir","Anis","Mouniym");
-	std::cout << "id: " << l.id() << std::endl;
-	std::cout << "Reader is: " << getFullName(l) << std::endl;
+	std::string lecteur=l.id();
+	std::cout << "id: " << lecteur << std::endl;
+	std::cout << "Reader : " << getFullName(l) << std::endl;
+	
+	Emprunt e(a_day,15,l);
+	std::cout << "le livre " << e.ISBN() << "a été emprunté le " << toString(a_day) << "par " << l.id << std::endl;
 	return 0;
 }
