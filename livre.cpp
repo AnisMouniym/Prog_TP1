@@ -6,15 +6,8 @@
 #include <vector>
 #include <string>
 
-namespace livre {
-	Livre::Livre(std::string title, std::string language,std::string auteur, int ISBN, date::Date date) {
-	_title = title;
-	_language = language;
-	_genre = genre;
-	_ISBN = ISBN;
-	_date = date;
+Livre::Livre(std::string title, std::string language, std::string genre, std::string auteur, std::string ISBN, Date::Date date) _title(title), _language(language), _genre(genre), _auteur(auteur), _ISBN(ISBN), _date(date) {} 
 
-}
 
 std::string Livre::title() const {
 	return _title;
@@ -28,27 +21,18 @@ std::string Livre::genre() const {
 	return _genre;
 }
 
-std::string Auteur::auteur() {
-	getFullName(Auteur);
+std::string livre::auteur(Auteur& a) const{
+	return Auteur.getFullName();
 }
 
-date::Date date() ;
+Date::Date date() const; {
+	return _date;
+}
 
-int Livre::ISBN() {
+std::string Livre::ISBN() {
 	return _ISBN;
 }
 
-
-std::ostream& operator<<(std::ostream& os, const Livre& livre){
-	os << "Titre : " <<livre.title() << std::endl;
-	os << "Langue : " <<livre.language() << std::endl;
-	os << "Genre : " <<livre.genre() << std::endl;
-	os << "Auteur : " <<livre.auteur() << std::endl;
-	os << "Date de publication : " <<livre.date() << std::endl;
-	os << "ISBN : " <<livre.ISBN()<< std::endl;
-	return os;
-}
-}
 	
 
 

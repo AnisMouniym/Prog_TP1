@@ -36,7 +36,7 @@ void Date::next() {
         _month=1;
 	_year++;
     }
-    else if (_day==getDaysInMonth(_month)) {
+    else if (_day==getDaysInMonth(_year,_month)) {
         _day=1;
         _month++;
     }
@@ -53,7 +53,7 @@ void Date::back() {
     }
     else if (_day==1) {
         _month--;
-        _day=getDaysInMonth(_month);
+        _day=getDaysInMonth(_year,_month);
     }
     else {
         _day--;
@@ -67,30 +67,37 @@ void Date::back() {
  * 
 */
 
-bool isDate(int month, int day) {
-    if ((day < 1) || (day>31)) return false;
-    if ((month <1) || (month>12)) return false;
-    if ((month == 2) && (day > 28)) return false;
-    if (((month == 4) || (month == 6) || 
-        (month == 9) || (month == 11)) && (day > 30)) return false;
-    return true;
-}
 
-int getDaysInMonth(int month)  { 
+
+int getDaysInMonth(int year,int month)  { 
     assert(((month >=1) && (month<=12)) && "Month is not valid");
-    if (month == 2) return 28;
-    if ((month == 1 || month == 3 || month == 5 || month == 7
-    || month == 8 || month == 10 || month == 12)) return 31;
+    if ((month == 2 && (year % 4) == 0 && ((year % 100) != 0 || (year % 400 ) == 0))){ return 29;
+}
+    else if (month ==2) { 
+return 28; 
+}
+    if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)) return 31;
     return 30;
 }
+
 
 int dayOfYear(Date d) {
     auto day=0;
     for (auto i=1;i<d.month();i++) {
-        day+=getDaysInMonth(i);
+        day+=getDaysInMonth(d.year(),i);
     }
     day+= d.day();
     return day;
+}
+
+bool isDate(int month, int day) {
+	if ((day < 1) || (day>31)) return false;
+	if ((month <1) || (month>12)) return false;
+	if ((month == 2) && (day > 28)) return false;
+	if (((month == 4) || (month == 6) || 
+        (month == 9) || (month == 11)) && (day > 30)) return false;
+	 ;
+	return true;
 }
 
 std::string toString(Date d) {
