@@ -1,6 +1,5 @@
-#include <string>
-#include <auteur.h>
-
+#include <iostream>
+#include "auteur.h"
 
 Auteur::Auteur(std::string firstname, std::string lastname) : _firstname(firstname), _lastname(lastname) {}
 
@@ -12,8 +11,8 @@ std::string Auteur::lastname() const {
 	return _lastname;
 }
 
-std::string getFullName(const Auteur &p) {
-	return p.firstname() + " " + p.lastname();
+std::string getFullName(const Auteur &a) {
+	return a.firstname() + " " + a.lastname();
 }
 
 

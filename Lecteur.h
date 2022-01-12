@@ -14,7 +14,7 @@ public:
 
 	//method
 	std::string getFullName() const;
-		
+
 private:
 	std::string _id;
 	std::string _firstname;
