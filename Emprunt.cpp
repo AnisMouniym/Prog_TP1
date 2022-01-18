@@ -2,9 +2,10 @@
 #include "Emprunt.h"
 #include "date.h"
 #include "date.cpp"
+#include "Lecteur.h"
 
 
-Emprunt::Emprunt(Date date, int isbn, reader::Lecteur l): _date(date), _isbn(isbn), _l(l) {
+Emprunt::Emprunt(Date date, std::string ISBN, std::string ID): _date(date), _ISBN(ISBN), _ID(ID) {
 }
 
 Date Emprunt::date() const {
@@ -12,11 +13,10 @@ Date Emprunt::date() const {
 }
 
 int Emprunt::ISBN() const {
-	return _isbn;
+	return _ISBN;
 }
 
-Lecteur Emprunt::getID() const {
-	return l.id();
+Lecteur Emprunt::ID() const {
+	return _ID;
 }
-
 
