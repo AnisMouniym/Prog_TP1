@@ -26,6 +26,6 @@ int main() {
 	std::cout << livre1.auteur() << ", " << livre1.title() << std::endl;
 //test de la classe Emprunt
     Emprunt e(a_day,"0123","troth");
-	std::cout << e.date() << e.ISBN() << e.getID() << std::endl;
+	std::cout << e.date() << " " << e.ISBN() << " " << e.getID() << std::endl;
 	return 0;
 }
