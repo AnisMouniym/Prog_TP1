@@ -1,7 +1,5 @@
 #include "date.h"
-#include "Lecteur.h"
-#include "auteur.h"
-#include "livre.h"
+#include "Emprunt.h"
 #include <iostream>
 
 int main() {
@@ -23,7 +21,8 @@ int main() {
 	Livre livre1("Harry Potter", "French", "Roman", a, "0179279258",a_day);
 	Livre livre2("Harry Potter 2", "French", "Roman", a, "0179279259",a_day);
 	std::cout << livre1.auteur() << ", " << livre1.title() << std::endl;
-// test de la classe Emprunt
-	
+//test de la classe Emprunt
+    Emprunt e(a_day,"0123","troth");
+	std::cout << e.date() << e.ISBN() << e.getID() << std::endl;
 	return 0;
 }

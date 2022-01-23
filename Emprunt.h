@@ -2,8 +2,6 @@
 #define EMPRUNT_H
 #include <string>
 #include "date.h"
-#include "livre.h"
-#include "Lecteur.h"
 class Emprunt {
 public:
 //constructor
@@ -16,6 +14,6 @@ public:
 private:
 		Date _date;
 		std::string _ISBN;
-		std::string ID;
+		std::string _ID;
 };
 #endif // EMPRUNT_H
