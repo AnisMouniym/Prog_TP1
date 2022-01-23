@@ -1,8 +1,8 @@
 #include "date.h"
 #include "Emprunt.h"
-#include "Lecteur.h"
-#include "auteur.h"
 #include "livre.h"
+#include "auteur.h"
+#include "Lecteur.h"
 #include <iostream>
 
 int main() {
